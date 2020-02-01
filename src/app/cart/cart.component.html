@@ -1,0 +1,72 @@
+<section class="shopping-cart spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cart-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th class="p-name">Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th><i class="ti-close" title="Remove All Products"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let item of arrcartItems ; let i= index">
+                <td class="cart-pic first-row">
+                  <img src="{{ProductImgPath}}{{item.Product.photo}}" alt="{{item.Product.name}}" height="170px" width="170px" >
+                </td>
+                <td class="cart-title first-row">
+                  <h5>{{item.Product.name.toUpperCase()}}</h5>
+                </td>
+                <td class="p-price first-row">{{item.Product.price | currency : 'INR'}}</td>
+                <td class="qua-col first-row">
+                  <div class="quantity">
+                    <div class="pro-qty">
+
+                      <input type="text" #txtQuantity [value]="item.Quantity">
+
+                    </div>
+                  </div>
+                </td>
+                <td class="total-price first-row">{{item.SubTotal | currency : 'INR'}}</td>
+                <td class="close-td first-row" (click)="onRemoveFromCart(item.Product.id, i)">
+                  <i class="ti-close"></i>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cart-buttons">
+              <a routerLink="/" class="primary-btn continue-shop">Continue shopping</a>
+              <a  class="primary-btn up-cart">Update cart</a>
+            </div>
+            <div class="discount-coupon">
+              <h6>Discount Codes</h6>
+              <form action="#" class="coupon-form">
+                <input type="text" placeholder="Enter your codes">
+                <button type="submit" class="site-btn coupon-btn">Apply</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-4">
+            <div class="proceed-checkout">
+              <ul>
+                <!-- <li class="subtotal">Subtotal <span>$240.00</span></li> -->
+                <li class="cart-total">Total <span>{{GrandTotal | currency : 'INR'}}</span></li>
+              </ul>
+              <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

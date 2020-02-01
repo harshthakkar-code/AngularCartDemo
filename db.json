@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Converse Shoes",
+      "price": 2500,
+      "photo": "product-9.jpg"
+
+    },
+    {
+      "id": 2,
+      "name": "Sweater",
+      "price": 1000,
+      "photo": "product-6.jpg"
+
+    },
+    {
+      "id": 3,
+      "name": "Yellow Hat",
+      "price": 250,
+      "photo": "product-5.jpg"
+
+    },
+    {
+      "id": 4,
+      "name": "Travel Bag",
+      "price": 1500,
+      "photo": "product-7.jpg"
+
+    },
+    {
+      "id": 5,
+      "name": "2 Layer Windbreaker",
+      "price": 2000,
+      "photo": "product-8.jpg"
+
+    },
+    {
+      "id": 6,
+      "name": "Shoes",
+      "price": 500,
+      "photo": "product-9.jpg"
+
+    }
+  ]
+}

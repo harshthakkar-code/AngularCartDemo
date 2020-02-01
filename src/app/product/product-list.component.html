@@ -1,0 +1,47 @@
+
+<section class="product-shop spad">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-9 order-1 order-lg-2">
+
+        <div class="product-list">
+          <div class="row">
+
+            <div *ngFor="let item of arrProductList" class="col-lg-4 col-sm-6">
+              <div class="product-item">
+                <div class="pi-pic">
+
+                  <img src="{{ProductImgPath}}{{item.photo}}" alt="{{item.name}}">
+
+                  <ul>
+                    <li class="w-icon active" title="Add to Cart" style="cursor: pointer;">
+                      <a (click)="onAddToCart(item.id)">
+                        <i class="icon_bag_alt"></i></a>
+                    </li>
+
+                    <li class="w-icon" title="Remove From Cart" style="cursor: pointer;">
+                      <a (click)="onRemoveFromCart(item.id)">
+                      <i class="ti-close"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="pi-text">
+                  <a href="#">
+                    <h5>{{item.name.toUpperCase()}}</h5>
+                  </a>
+                  <div class="product-price">
+                    {{item.price | currency : 'INR'}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
