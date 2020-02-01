@@ -93,4 +93,11 @@ export class ProductListComponent implements OnInit {
       });
     }
   }
+
+  onRemoveFromCart(SelectedProductID) {
+    if (this.UserId != null) {
+      this._cartService.onRemoveFromCart(SelectedProductID);
+      this._router.navigate(['/shoppingcart']);
+    }
+  }
 }
