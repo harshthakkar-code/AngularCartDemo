@@ -38,4 +38,15 @@ export class CartComponent implements OnInit {
       this.arrcartItems.splice(index, 1);
     }
   }
+
+  onQtyChange(item: CartDetail, txtQty) {
+    console.log("selected item ",item);
+    console.log("latest value " , txtQty);
+
+
+    item.SubTotal = +txtQty * item.Product.price;
+    let x:CartDetail[] = [item];
+    this.GrandTotal = this._cartService.doGrandTotal(x);
+    console.log(item);
+  }
 }

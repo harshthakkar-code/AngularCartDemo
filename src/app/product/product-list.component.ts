@@ -31,15 +31,15 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  onAddToCart(SelectedProductID) {
+  onAddToCart(item: ProductModel) {
     if (this.UserId == null) {
         alert('Go to Login');
     }
     else {
-    this._productData.getProductById(SelectedProductID).subscribe(
-      (data: ProductModel) => {
+    //this._productData.getProductById(SelectedProductID).subscribe(
+      //(data: ProductModel) => {
 
-        this.cartProductItem = data;
+        this.cartProductItem = item;
         this.SubTotal = this._cartService.doSubTotal(this.cartProductItem.price, 1);
         this.currentCartItem = new CartDetail(this.cartProductItem, 1, this.SubTotal);
 
@@ -64,7 +64,7 @@ export class ProductListComponent implements OnInit {
             // getting index of product
             index = cart.CartItems.map(function(x) {
               return x.Product.id;
-            }).indexOf(SelectedProductID);
+            }).indexOf(item.id);
 
             // if current product does not exist in cart then add it
             if (index == -1) {
@@ -89,8 +89,9 @@ export class ProductListComponent implements OnInit {
           }
         }
         console.log(localStorage.getItem('cart'));
-        this._router.navigate(['/shoppingcart']);
-      });
+        // this._router.navigate(['/shoppingcart']);
+        alert("added");
+      //});
     }
   }
 
